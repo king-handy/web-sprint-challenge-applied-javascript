@@ -2,7 +2,7 @@ const Card = (article) => {
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
-  // It takes as its only argument an "article" object with `headline`, `authorPhoto` and `authorName` properties.
+  // It takes as its only argument an "article" object with `headline`, `authorPhoto`, and `authorName` properties.
   // The tags used, the hierarchy of elements and their attributes must match the provided markup exactly!
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
@@ -17,6 +17,28 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  const card = document.createElement('div')
+  const headline = document.createElement('div')
+  const author = document.createElement('div')
+  const imageContainer = document.createElement('div')
+  const image = document.createElement('img')
+  const name = document.createElement('span')
+
+  card.classList.add('card')
+  headline.classList.add('headline')
+  author.classList.add('author')
+  imageContainer.classList.add('img-container')
+  headline.textContent = `${headline}`
+  image.setAttribute('src', `${authorPhoto}`)
+  name.textContent = `${authorName}`
+
+  card.appendChild(headline)
+  card.appendChild(author)
+  author.appendChild(imageContainer)
+  author.appendChild(name)
+  imageContainer.appendChild(image)
+
+  return card
 }
 
 const cardAppender = (selector) => {
