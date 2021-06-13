@@ -1,3 +1,5 @@
+import article from '../../src/mocks/data'
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -37,6 +39,10 @@ const Card = (article) => {
   author.appendChild(imageContainer)
   author.appendChild(name)
   imageContainer.appendChild(image)
+
+  card.addEventListener('click', () => {
+    console.log(headline)
+  })
 
   return card
 }

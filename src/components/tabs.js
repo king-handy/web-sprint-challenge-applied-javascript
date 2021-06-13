@@ -1,3 +1,5 @@
+import topics from '../../src/mocks/data'
+
 const Tabs = (topics) => {
   // TASK 3
   // ---------------------
