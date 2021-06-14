@@ -2,7 +2,7 @@ import articles from '../../src/mocks/data'
 
 const container = document.querySelector('.cards-container')
 
-const Card = (article) => {
+const Card = (articles) => {
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -49,13 +49,14 @@ const Card = (article) => {
   return card
 }
 
-function cardCreator(topics) {
-  const newCard = document.createElement('')
+function cardCreator(articles) {
+  const newCard = document.querySelectorAll('articles')
+  console.log(newCard)
   newCard.textContent = topics
   newCard.classList.add('tab')
 }
 
-const cardAppender = (selector) => {
+const cardAppender = (articles) => {
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
@@ -64,16 +65,17 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-  const response = axios.get('https://lambda-times-api.herokuapp.com/articles')
-    .then(response => {
+  axios.get('https://lambda-times-api.herokuapp.com/articles')
+    .then({response}) => {
       response.data.forEach(articles => {
-        const cards = cardCreator(document.body.innerHTML)
-        container.appendChild( Card(article) )
+        const cards = cardCreator()
+        container.appendChild( Card() )
       })
+      cardCreator(articles)
     })
     
   const cards = document.querySelector(selector)
-  cards.appendChild( Card('articles'))
+  cards.appendChild()
 
   return cards
 }
