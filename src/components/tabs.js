@@ -1,6 +1,7 @@
 import topics from '../../src/mocks/data'
 import axios from 'axios'
 
+// const url = 'https://lambda-times-api.herokuapp.com/topics'
 const tabsContainer = document.querySelector('.tabs-container')
 
 const Tabs = (topics) => {
@@ -64,9 +65,10 @@ const tabsAppender = (selector) => {
     })
 
   const tabs = document.querySelector(selector)
-  tabs.appendChild(Tabs(response))
+  tabs.appendChild( Tabs(response) )
 
   return tabs
 }
 
 export { Tabs, tabsAppender }
+

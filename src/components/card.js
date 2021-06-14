@@ -1,4 +1,4 @@
-import article from '../../src/mocks/data'
+import articles from '../../src/mocks/data'
 
 const container = document.querySelector('.cards-container')
 
@@ -49,6 +49,12 @@ const Card = (article) => {
   return card
 }
 
+function cardCreator(topics) {
+  const newCard = document.createElement('')
+  newCard.textContent = topics
+  newCard.classList.add('tab')
+}
+
 const cardAppender = (selector) => {
   // TASK 6
   // ---------------------
@@ -58,8 +64,19 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-  selector = document.querySelector('cards-container')
+  const response = axios.get('https://lambda-times-api.herokuapp.com/articles')
+    .then(response => {
+      response.data.forEach(articles => {
+        const cards = cardCreator(document.body.innerHTML)
+        container.appendChild( Card(article) )
+      })
+    })
+    
+  const cards = document.querySelector(selector)
+  cards.appendChild( Card('articles'))
 
+  return cards
 }
 
 export { Card, cardAppender }
+
