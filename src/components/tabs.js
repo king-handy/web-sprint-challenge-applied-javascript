@@ -1,6 +1,8 @@
 import topics from '../../src/mocks/data'
 import axios from 'axios'
 
+const tabsContainer = document.querySelector('.header-container')
+
 const Tabs = (topics) => {
   // TASK 3
   // ---------------------
@@ -59,8 +61,7 @@ const tabsAppender = (selector) => {
         const tabDiv = document.querySelector(selector)
         tabDiv.appendChild(tab)
       })
-        return topic
-      }
+        return tab
     })
 
   const tabs = document.querySelector(selector)
