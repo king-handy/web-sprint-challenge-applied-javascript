@@ -36,8 +36,12 @@ const Tabs = (topics) => {
   return topicsDiv
 }
 
-function tabCreator() {
-  const newTab = document.
+function tabCreator(topics) {
+  const newTab = document.createElement('h1')
+  newTab.textContent = topics
+  newTab.classList.add('tab')
+
+  return newTab
 }
 
 const tabsAppender = (selector) => {
