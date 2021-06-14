@@ -1,5 +1,7 @@
 import article from '../../src/mocks/data'
 
+const container = document.querySelector('.cards-container')
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -57,7 +59,7 @@ const cardAppender = (selector) => {
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
   selector = document.querySelector('cards-container')
-  
+
 }
 
 export { Card, cardAppender }
