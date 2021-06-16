@@ -15,8 +15,10 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "mocks": "^0.0.15",
     "msw": "=0.28.2",
-    "regenerator-runtime": "^0.13.7"
+    "regenerator-runtime": "^0.13.7",
+    "src": "^1.1.2"
   },
   "repository": {
     "type": "git",
